@@ -1,13 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+var cors = require('cors')
 const watson = require('../src/watson/client-watson');
-const climaTempo = require('../src/watson/client-climatempo');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 app.post('/mensagem/', (req, res) => {
     const { text, context = {} } = req.body;
