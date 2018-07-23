@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const request = require('request');
 var cors = require('cors')
 const watson = require('../src/watson/client-watson');
 
